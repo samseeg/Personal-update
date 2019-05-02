@@ -1,14 +1,21 @@
-import React, { Component } from 'react';
-import {Link} from 'react-router-dom';
+import React, { Component } from "react";
+// import {Link} from 'react-router-dom';
 
 class Login extends Component {
   render() {
     return (
-        <Link to='/home'>
       <div className="loginWrapper">
-     login
+        <div className="loginTitle">BAARZZ</div>
+        <div className="loginBtn">
+          <a
+            href={process.env.REACT_APP_LOGIN}
+            className="login_btn"
+            id="hiw-login-container"
+          >
+            <div>Login/Register</div>
+          </a>
+        </div>
       </div>
-      </Link>
     );
   }
 }

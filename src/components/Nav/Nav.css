@@ -1,0 +1,15 @@
+.navWrapper {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    grid-template-rows: 70px;
+    grid-template-areas: "header header header";
+}
+
+.profileImg, .logout, .name{
+    justify-self: center;
+    align-self: center;
+}
+
+.profileImg, .logout {
+    padding: 1.7em;
+}

@@ -48,13 +48,13 @@ passport.use(new Auth0Strategy({
 
 app.get('/auth', passport.authenticate('auth0'));
 app.get('/auth/callback', passport.authenticate('auth0', {
-    successRedirect: '/main',
+    successRedirect: 'http://localhost:3000/home',
     failureRedirect: '/auth'
 }));
 
 app.get('/auth/logout', (req, res) => {
     req.logOut();
-    res.redirect(302, '/#/')
+    res.redirect(302, '/')
 })
 
 

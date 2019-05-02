@@ -4,16 +4,16 @@ import axios from 'axios';
 import {Link} from 'react-router-dom';
 import Nav from '../Nav/Nav';
 
-import './Home.css';
+import './Profile.css';
 
-class Home extends Component {
+class Profile extends Component {
   render() {
     return (
-      <div className="homeWrapper">
+      <div className="profileWrapper">
         <Nav />
       </div>
     );
   }
 }
 
-export default Home;
+export default Profile;
