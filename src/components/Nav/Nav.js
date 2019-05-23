@@ -2,23 +2,47 @@ import React, { Component } from "react";
 
 import { Link } from "react-router-dom";
 
-// import { connect } from "react-redux";
-// import { emptyPosts } from "../../ducks/users";
+import { connect } from "react-redux";
+import { getCurrentUser } from "../../ducks/users";
 
 import "./Nav.css";
 
 class Nav extends Component {
+  componentDidMount() {
+    // this.props.getCurrentUser();
+  }
+
   render() {
+    // console.log("Nav.js current user ", this.props.currentUser);
     return (
       <div className="navWrapper">
-        <Link to='/profile' className="profileImg btn">
-        <img alt='profile'  />
+        <Link to="/profile" className="profileImg btn">
+          <img
+            className="profilePic"
+            src={this.props.currentUser.img}
+            alt="profileAvatar"
+          />
         </Link>
-        <div className="name btn">BAARZZ</div>
-        <a href="/auth/logout" className='logout btn'>Logout</a>
+        <Link className="link name" to={'/categories'}>
+        <div className="name btn">baarzz</div>
+        </Link>
+        <a href="/auth/logout" className="logout btn">
+          Logout
+        </a>
       </div>
     );
   }
 }
 
-export default Nav;
+function mapStateToProps(state) {
+  return {
+    currentUser: state.currentUser
+  };
+}
+
+export default connect(
+  mapStateToProps,
+  {
+    getCurrentUser: getCurrentUser
+  }
+)(Nav);

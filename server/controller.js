@@ -10,7 +10,7 @@ module.exports = {
     getPosts: (req, res, next) => {
         const db = req.app.get('db');
         let {id} = req.params;
-        // console.log(req.params)
+        // console.log(req)
         db.find_posts(id)
         .then(response => res.status(200).send(response))
         .catch( (err) => res.status(500).send('something went wrong'))
@@ -45,7 +45,7 @@ module.exports = {
     getCurrentUser: (req, res, next) => {
         const db = req.app.get('db');
         let {user_id} = req.user;
-        // console.log(user_id)
+        console.log("hello", req.user)
         db.find_current_user(user_id)
         .then(response => res.status(200).send(response))
         .catch(err => res.status(500).send('something went wrong'))

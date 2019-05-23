@@ -1,20 +1,46 @@
-* {
-    box-sizing: border-box;
-}
-
-header {
+.homeWrapper {
     display: grid;
-    background:rgb(233, 52, 52);
 }
 
-.controlWrapper {
-    height: 50px;
-    width: 100%;
-    background-color: red;
+h3 {
+    font-size: 2.3em;
+    margin: 0px 0px 0.2em 0.8em;
 }
 
-.categoryWrapper {
-    height: 50px;
-    width: 100%;
-    background-color: aqua;
+.catWrapper {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(21em, 1fr));
+    grid-gap: 1rem;
+    margin: 0 1.7em 0.8em 1.7em;
+}
+
+.cat {
+    height: 21em;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    text-transform: capitalize;
+}
+
+.cat:hover {
+    cursor: pointer;
+}
+
+.cat > p::before {
+    content: "";
+    position: absolute;
+    width: 95%;
+    height: 5px;
+    bottom: 40px;
+    background-color: white;
+}
+
+.cat > p {
+    position: relative;
+    top: 270px;
+    margin: 5px 5px 5px 10px;
+    color: white;
+    text-shadow: 0 0 10px black;
+    text-decoration: none;
+    font-size: 1.8em;
 }
